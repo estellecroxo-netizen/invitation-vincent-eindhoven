@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<title>Rider Mission — Eindhoven</title>
+<style>
+:root{--bg:#111;--panel:#1b1b1b;--orange:#ff6a22;--cream:#fff5e8;--muted:#b8b3ad}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 85% 5%,#45200f 0,transparent 32%),var(--bg);color:var(--cream);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+main{max-width:650px;margin:0 auto;padding:24px 18px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.logo{font-weight:900;color:var(--orange);font-size:1rem}
+.panel{margin-top:24px;padding:clamp(24px,6vw,42px);background:linear-gradient(145deg,#222,#151515);border:1px solid #39332f;border-radius:24px;box-shadow:0 18px 55px #0007;position:relative;overflow:hidden}
+.panel:after{content:"";position:absolute;right:-30px;top:110px;width:150px;height:150px;border:18px solid #ff6a221c;border-radius:50%;pointer-events:none}
+.kicker{color:var(--orange);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(2.4rem,10vw,4.7rem);line-height:.92;letter-spacing:-.06em;margin:18px 0}
+h1 span{color:var(--orange)}
+h2{font-size:1.65rem;line-height:1.05;letter-spacing:-.03em;margin:12px 0}
+p{line-height:1.6;color:#e8e0d7}
+.hero-icon{font-size:4rem;margin:22px 0 8px;filter:drop-shadow(0 8px 12px #000)}
+.tag{display:inline-block;border:1px solid #5b463a;border-radius:999px;padding:7px 11px;margin:5px 5px 0 0;font-size:.78rem;color:#f2d9c8}
+button,.linkbtn{width:100%;display:block;border:0;border-radius:13px;padding:15px 18px;font-size:1rem;font-weight:850;text-align:center;text-decoration:none;cursor:pointer;margin-top:14px}
+.primary{background:var(--orange);color:#17110d}
+.secondary{background:#292522;color:var(--cream);border:1px solid #48403a}
+.screen{display:none}.screen.active{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:.3;transform:translateY(7px)}to{opacity:1;transform:none}}
+.steps{display:flex;gap:6px;margin:22px 0 0}
+.steps i{height:4px;background:#51453d;flex:1;border-radius:10px}
+.steps i.on{background:var(--orange)}
+.info{border-left:3px solid var(--orange);padding:8px 0 8px 14px;margin:18px 0;color:#e7d7ca}
+small,.muted{color:var(--muted)}
+.bigdate{font-size:1.3rem;font-weight:900;color:var(--orange);margin:8px 0}
+.message{font-size:1.08rem;line-height:1.7;background:#111;border:1px dashed #60452f;padding:18px;border-radius:14px}
+footer{text-align:center;margin-top:22px;font-size:.75rem;color:#827a73}
+a{color:#ffb17f}
+@media(prefers-reduced-motion:reduce){.screen.active{animation:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><div class="logo">RM / 01</div><div>Birthday special · 2027</div></div>
+  <section class="panel">
+    <div class="screen active" id="s0">
+      <div class="kicker">Une mission t’attend</div>
+      <h1>RIDER<br><span>MISSION</span></h1>
+      <p>Un rider. Une destination. Un week-end à partager.</p>
+      <div class="hero-icon" aria-hidden="true">🛹</div>
+      <span class="tag">Freestyle</span><span class="tag">Road trip</span><span class="tag">Team Sam</span>
+      <button class="primary" onclick="go(1)">Lancer la mission ↗</button>
+    </div>
+    <div class="screen" id="s1">
+      <div class="kicker">Briefing · 01</div>
+      <h2>Du béton, des modules… et de l’adrénaline.</h2>
+      <p>Prépare tes roues : une destination t’attend pour une session freestyle et un moment père-fils hors du quotidien.</p>
+      <div class="hero-icon" aria-hidden="true">⚡🛴</div>
+      <div class="info">Indice : on passe la frontière pour rejoindre un spot indoor bien connu des riders.</div>
+      <button class="primary" onclick="go(2)">Découvrir la destination</button>
+      <button class="secondary" onclick="go(0)">Retour</button>
+    </div>
+    <div class="screen" id="s2">
+      <div class="kicker">Destination débloquée · 02</div>
+      <h1>EINDHOVEN<span>.</span></h1>
+      <p>Pays-Bas — cap sur un week-end urbain, du ride et des souvenirs à fabriquer ensemble.</p>
+      <div class="info"><strong>📍 Samedi 2 janvier 2027</strong><br>Session prévue à <strong>Area 51 Skatepark</strong>.</div>
+      <div class="info"><strong>🛏️ Nuit sur place</strong><br>Hôtel réservé du 2 au 3 janvier.</div>
+      <div class="info"><strong>🌆 Dimanche 3 janvier</strong><br>Petite exploration d’Eindhoven avant le retour.</div>
+      <p class="muted"><small>À noter : l’ouverture et les horaires d’Area 51 le 2 janvier 2027 restent à confirmer auprès du skatepark avant le départ.</small></p>
+      <button class="primary" onclick="go(3)">Voir le message final ❤️</button>
+      <button class="secondary" onclick="go(1)">Retour</button>
+    </div>
+    <div class="screen" id="s3">
+      <div class="kicker">Mission acceptée · 03</div>
+      <h2>Joyeux anniversaire, Vincent !</h2>
+      <div class="message" id="birthdayMessage">Cette fois, pas de cadeau à ranger sur une étagère : on t’offre un moment à vivre, des souvenirs à créer et une aventure à partager avec Sam. Prépare tes roues, Eindhoven nous attend ! ❤️</div>
+      <button class="primary" onclick="copyMessage()">Copier le message</button>
+      <a class="linkbtn secondary" href="https://area51eindhoven.nl/" target="_blank" rel="noopener">Découvrir Area 51 ↗</a>
+      <button class="secondary" onclick="go(0)">Rejouer la mission ↻</button>
+      <p id="copyStatus" class="muted" aria-live="polite"></p>
+    </div>
+    <div class="steps" aria-label="Progression"><i class="on" id="p0"></i><i id="p1"></i><i id="p2"></i><i id="p3"></i></div>
+  </section>
+  <footer>MADE FOR THE RIDE · EINDHOVEN ’27</footer>
+</main>
+<script>
+function go(n){
+  document.querySelectorAll('.screen').forEach((el,i)=>el.classList.toggle('active',i===n));
+  document.querySelectorAll('.steps i').forEach((el,i)=>el.classList.toggle('on',i<=n));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+async function copyMessage(){
+  const msg=document.getElementById('birthdayMessage').innerText;
+  const status=document.getElementById('copyStatus');
+  try{await navigator.clipboard.writeText(msg);status.textContent='Message copié !';}
+  catch(e){status.textContent=msg;}
+}
+</script>
+</body>
+</html>
